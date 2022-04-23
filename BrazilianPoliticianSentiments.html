@@ -49,7 +49,7 @@
 
 
                         <!-- Start Canvas -> Desenhar elementos gráficos usando JD -->
-                        <canvas class="line-chart" id="myChart" width="400" height="300"></canvas>
+                        <canvas class="line-chart" id="myChart"></canvas>
 
                         <!-- Include Chart Js -->
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
@@ -69,9 +69,9 @@
 
                             var chart_type = 'horizontalBar'
 
-                            var largura = window.screen.width
+                            var wid = window.screen.width
 
-                            if (largura < 800)
+                            if (wid < 800)
                                 legend_position = 'top';
                             else
                                 legend_position = 'left';
@@ -141,8 +141,8 @@
                                       label: "Doria - Negative Tweets",
                                       type: chart_type,
                                       stack: "Doria",
-                                      backgroundColor: "#2f0b4f",
-                                      data: doria_n,
+                                      backgroundColor: "#2f0b4f"
+,                                      data: doria_n,
                                     },
                                 ]
                               },
@@ -150,7 +150,11 @@
 
                                   legend: {
                                     position: legend_position,
-
+                                    labels: {
+                                        font: {
+                                            size: 40
+                                        }
+                                    }
 
                                 },
                                 scales: {
@@ -169,11 +173,7 @@
                                 },
                               }
                             });
-
-
-
                         </script>
-
                     </div>
                 </div>
             </section>
