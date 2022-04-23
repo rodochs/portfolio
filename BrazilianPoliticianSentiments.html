@@ -49,7 +49,7 @@
 
 
                         <!-- Start Canvas -> Desenhar elementos gráficos usando JD -->
-                        <canvas class="line-chart" id="myChart"></canvas>
+                        <canvas class="line-chart" id="myChart" width="400" height="400"></canvas>
 
                         <!-- Include Chart Js -->
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
@@ -67,7 +67,7 @@
                             var ciro_n = [-49.8116646120357, -45.17187941596752, -50.054699212649304, -49.50726118612685, -51.40425867681321, -50.33194336219988, -49.8116646120357]
                             var doria_n = [-52.37391051514233, -52.43702686586466, -61.3933845748344, -54.76500915690909, -58.259633862830555, -54.96204903860215, -52.37391051514233]
 
-                            var chart_type = 'bar'
+                            var chart_type = 'horizontalBar'
 
                             var ctx = document.getElementsByClassName("line-chart");
                             var chartGraph = new Chart(ctx, {
@@ -149,7 +149,7 @@
                               options: {
 
                                   legend: {
-                                    position: 'top',
+                                    position: 'right',
 
                                 },
                                 scales: {
