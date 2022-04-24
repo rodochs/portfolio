@@ -13157,14 +13157,13 @@ section.resume-section .resume-section-content {
 			cursor: default;
 		}
 
-    canvas {
-      border:  1px solid gainsboro;
-      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    }
+canvas {
+  border:  1px solid gainsboro;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .container-chart {
-      position: relative;
-      margin:  auto;
-      height: 1000px;
-      width: 1000px;
-    }
+.container-chart {
+  position: relative;
+  width: 100%;
+  min-width: 800xp;
+}
