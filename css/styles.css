@@ -13166,4 +13166,5 @@ canvas {
   position: relative;
   width: 100%;
   min-width: 800xp;
+  min-height: 800xp;
 }
