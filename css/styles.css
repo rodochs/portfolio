@@ -13160,8 +13160,6 @@ section.resume-section .resume-section-content {
 canvas {
   border:  1px solid gainsboro;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-  min-width: 800px;
-  min-height: 400px;
 }
 
 .container-chart {
