@@ -13165,6 +13165,6 @@ canvas {
 .container-chart {
   position: relative;
   width: 100%;
-  min-width: 800xp;
-  min-height: 800xp;
+  min-width: 800px;
+  min-height: 800px;
 }
