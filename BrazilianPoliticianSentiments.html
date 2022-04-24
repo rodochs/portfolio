@@ -33,7 +33,6 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#portfolio">portfolio</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#interests">Interests</a></li>
-                    <!--li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li-->
                 </ul>
             </div>
         </nav>
@@ -41,20 +40,23 @@
         <div class="container-fluid p-0">         
             <!-- Brazilian Politician Twitter Score Per Day-->
             <section class="resume-section" id="section-chart">
-                
                 <div class="resume-section-content">
                     <h2 class="mb-5">Brazilian Presidential Candidates Twitter Score Per Day</h2>
-                    <p class="lead mb-5">The Chart below represent each day tweets sentiment analysis of the .</p>
-                    
-                    <div class="container-chart">
-                        
-                        <!-- Start Canvas -> Desenhar elementos gráficos usando JD -->
-                        <canvas class="chart" id="myChart"></canvas>
+                    <p class="lead mb-3">The chart below presents, in percentage values (%), the positive tweets about the main candidates for the presidency of the republic in the Brazilian 2022 election. The analysis is performed daily with a sample of 1000 tweets per candidate and takes into account only those tweets with positive or negative content. I.e., tweets that don't show any sentiment are discarded from the analysis.</p>
+                    <p class="lead mb-3">You can obtain more information about the sentiment analysis methodology used by accessing the project 
+                        <a href="https://github.com/rodochs" target="_blank">Sentiment Analysis on Pt-br Tweets.</a>
+                    </p>
+                    <p class="lead mb-5">You can access the complete code for this project, from getting the tweets to configuring the graph by 
+                        <a href="https://github.com/rodochs" target="_blank">clicking here.</a>
+                    </p>
 
+
+                    <div class="container-chart mb-5">
+                        <!-- Start Canvas -> Desenhar elementos gráficos usando JD -->
+                        <canvas class="chart" id="myChart"></canvas>       
                     </div>
 
                 </div>
-
             </section>
             <hr class="m-0" />
         </div>
@@ -63,17 +65,13 @@
 
         <script>    
             /*CHART DATA*/
-            var lab = ['17/April', '18/April', '19/April', '20/April', '21/April', '22/April', '23/April']
-            var bolsonaro = [53.7004423891823, 42.35617754677584, 47.29504769424124, 43.23062577912847, 45.96085707331047, 50.19143572253972, 47.18110698455414]
-            var lula = [46.82019223187187, 44.550213444581, 46.72006123291549, 40.56933388606836, 36.218655829966615, 48.3396128674518, 42.751368802895676]
-            var ciro = [54.82812058403248, 49.945300787350696, 50.49273881387315, 48.59574132318679, 49.66805663780012, 50.1883353879643, 45.233776263203865]
-            var doria = [47.56297313413534, 38.6066154251656, 45.23499084309091, 41.740366137169445, 45.03795096139785, 47.62608948485767, 49.49666765056862]
-            var bolsonaro_n = [-46.2995576108177, -57.64382245322416, -52.70495230575876, -56.76937422087153, -54.03914292668953, -49.80856427746028, -52.81889301544586]
-            var lula_n = [-53.17980776812813, -55.449786555419, -53.27993876708451, -59.43066611393164, -63.781344170033385, -51.6603871325482, -57.248631197104324]
-            var ciro_n = [-45.17187941596752, -50.054699212649304, -49.50726118612685, -51.40425867681321, -50.33194336219988, -49.8116646120357, -54.766223736796135]
-            var doria_n = [-52.43702686586466, -61.3933845748344, -54.76500915690909, -58.259633862830555, -54.96204903860215, -52.37391051514233, -50.50333234943138]
+            let lab = ['17/April', '18/April', '19/April', '20/April', '21/April', '22/April', '23/April']
+            let bolsonaro = [53.7, 42.36, 47.3, 43.23, 45.96, 50.19, 47.18]
+            let lula = [46.82, 44.55, 46.72, 40.57, 36.22, 48.34, 42.75]
+            let ciro = [54.83, 49.95, 50.49, 48.6, 49.67, 50.19, 45.23]
+            let doria = [47.56, 38.61, 45.23, 41.74, 45.04, 47.63, 49.5]
 
-            let chart_type = 'horizontalBar'
+            let chart_type = 'bar'
 
             let ctx = document.getElementsByClassName("chart");
             let chartGraph = new Chart(ctx, {
@@ -82,67 +80,33 @@
                 labels: lab,
                 datasets: [
                     {
-                      label: "Lula - Positive Tweets",
+                      label: "Lula",
                       type: chart_type,
                       stack: "Lula",
                       backgroundColor: "#db415a",
                       data: lula,
                     }, 
                     {
-                      label: "Lula - Negative Tweets",
-                      type: chart_type,
-                      stack: "Lula",
-                      backgroundColor: "#962d3e",
-                      data: lula_n,
-                    }, 
-
-
-                    {
-                      label: "Bolsonaro - Positive Tweets",
+                      label: "Bolsonaro",
                       type: chart_type,
                       stack: "Bolsonaro",
                       backgroundColor: "#085ce6",      
                       data: bolsonaro,
                     }, 
                     {
-                      label: "Bolsonaro - Negative Tweets",
-                      type: chart_type,
-                      stack: "Bolsonaro",
-                      backgroundColor: "#043078",
-                      data: bolsonaro_n,
-                    },
-
-
-                    {
-                      label: "Ciro Gomes - Positive Tweets",
+                      label: "Ciro Gomes",
                       type: chart_type,
                       stack: "Ciro",
                       backgroundColor: "#2aab1a",      
                       data: ciro,
                     }, 
                     {
-                      label: "Ciro Gomes - Negative Tweets",
-                      type: chart_type,
-                      stack: "Ciro",
-                      backgroundColor: "#14520c",
-                      data: ciro_n,
-                    },
-
-
-                    {
-                      label: "Doria - Positive Tweets",
+                      label: "Doria",
                       type: chart_type,
                       stack: "Doria",
                       backgroundColor: "#6618ab",      
                       data: doria,
                     }, 
-                    {
-                      label: "Doria - Negative Tweets",
-                      type: chart_type,
-                      stack: "Doria",
-                      backgroundColor: "#2f0b4f"
-,                                     data: doria_n,
-                    },
                 ]
               },
               options: {
@@ -151,7 +115,7 @@
                         left: 20,
                         right: 20,
                         top: 20,
-                        botom: 20,
+                        bottom: 20,
                     }
                 },
                 tooltips:{
@@ -160,9 +124,10 @@
                 },
                 title :{
                     display: true,
-                    text : 'Brazilian Presidential Candidates Twitter Score Per Day',
+                    text : 'Brazilian Presidential Candidates Twitter Score Per Day (%)',
                     fontSize : 20,
-                    align: 'end',
+                    align: 'center',
+                    position: 'top'
                 },
 
                 animation: {
@@ -170,32 +135,41 @@
                 },
                 legend: {
                     fullSize: false,
-                    position: 'left',
-                    align: 'end',
+                    position: 'right',
+                    align: 'start',
                     display: true,
                     maxHeight: 2,
                     maxWidth: 2,
                 },
                 scales: {
                   xAxes: [{
-                    max:100,
-                    min: -100,
                     gridLines: {
-                        display: false,
-                        drawBorder: false,
+                        display: true,
+                        drawBorder: true,
                     },
                     stacked: true,
                     ticks: {
-                      beginAtZero: true,
+                      suggestedMin: 0,
+                      suggestedMax: 100,
                       maxRotation: 0,
                       minRotation: 0
                     }
                   }],
                   yAxes: [{
+                    scaleLabel:{
+                        display: true,
+                        labelString: 'Positive Tweets (%)',
+                    },
+                    ticks: {
+                      suggestedMin: 0,
+                      suggestedMax: 100,
+                      maxRotation: 0,
+                      minRotation: 0
+                    },
                     stacked: true,
                     gridLines: {
                         display: true,
-                        drawBorder: true,
+                        drawBorder: false,
                     },
                   }]
                 },
