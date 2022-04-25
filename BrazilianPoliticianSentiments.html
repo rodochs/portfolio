@@ -28,11 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#projects">projects</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#portfolio">portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="http://rodolfoborges.info/#interests">Interests</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,7 +40,7 @@
             <!-- Brazilian Politician Twitter Score Per Day-->
             <section class="resume-section" id="section-chart">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Brazilian Presidential Candidates Twitter Score Per Day</h2>
+                    <h2 class="mb-5">BRAZILIAN PRESIDENTIAL CANDIDATES - DAILY TWITTER SCORE</h2>
                     <p class="lead mb-3">The chart below presents, in percentage values (%), the positive tweets about the main candidates for the presidency of the republic in the Brazilian 2022 election. The analysis is performed daily with a sample of 1000 tweets per candidate and takes into account only those tweets with positive or negative content. I.e., tweets that don't show any sentiment are discarded from the analysis.</p>
                     <p class="lead mb-3">You can obtain more information about the sentiment analysis methodology used by accessing the project 
                         <a href="https://github.com/rodochs/Twitter-Sentiment-Analysis-PTBR" target="_blank">Sentiment Analysis on Pt-br Tweets.</a>
@@ -70,14 +69,14 @@
             let doria = [47.56, 38.61, 45.23, 41.74, 45.04, 47.63, 49.5]
 
             let chart_type = 'bar'
-
+/*
             let wid = window.screen.width;
 
             if (wid < 800)
                 legend_position = 'top'
             else
                 legend_position = 'right'
-
+*/
             let ctx = document.getElementsByClassName("chart");
             let chartGraph = new Chart(ctx, {
               type: chart_type,
@@ -129,7 +128,7 @@
                 },
                 title :{
                     display: true,
-                    text : 'Brazilian Presidential Candidates Twitter Score Per Day (%)',
+                    text : 'Brazilian Presidential Candidates - Daily Twitter Score (%)',
                     fontSize : 20,
                     align: 'center',
                     position: 'top'
@@ -140,7 +139,7 @@
                 },
                 legend: {
                     fullSize: false,
-                    position: legend_position,
+                    position: 'right',
                     align: 'start',
                     display: true,
                 },
