@@ -68,15 +68,16 @@
             let ciro = [49.88, 44.25, 46.39, 45.01, 45.58, 46.08, 42.03, 41.83, 46.56, 47.41, 46.94, 33.59, 35.56, 40.07, 44.23, 48.51, 30.53]
             let doria = [41.61, 32.2, 39.87, 35.81, 39.82, 42.53, 44.67, 39.27, 38.89, 41.92, 37.35, 34.74, 34.29, 42.64, 31.43, 41.78, 32.42]
 
-            let chart_type = 'bar'
-/*
+            let chart_type = 'line'
+
             let wid = window.screen.width;
 
             if (wid < 800)
                 legend_position = 'top'
             else
                 legend_position = 'right'
-*/
+
+
             let ctx = document.getElementsByClassName("chart");
             let chartGraph = new Chart(ctx, {
               type: chart_type,
@@ -85,7 +86,7 @@
                 datasets: [
                     {
                       label: "Lula",
-                      type: 'line',
+                      type: chart_type,
                       borderColor: "#db415a",
                       borderWidth: "2",
                       backgroundColor: "rgba(219, 65, 90, 0.1)",
@@ -94,7 +95,7 @@
                     }, 
                     { 
                       label: "Bolsonaro",
-                      type: 'line',
+                      type: chart_type,
                       borderColor: "#085ce6",
                       borderWidth: "2",
                       backgroundColor: "rgba(8, 92, 230, 0.1)",
@@ -103,7 +104,7 @@
                     },
                     { 
                       label: "Ciro Gomes",
-                      type: 'line',
+                      type: chart_type,
                       borderColor: "#2aab1a",
                       borderWidth: "2",
                       backgroundColor: "rgba(42, 171, 26, 0.1)",
@@ -113,7 +114,7 @@
                     },
                     { 
                       label: "Doria",
-                      type: 'line',
+                      type: chart_type,
                       borderColor: "#6618ab",
                       borderWidth: "2",
                       backgroundColor: "rgba(102, 24, 171, 0.1)",
