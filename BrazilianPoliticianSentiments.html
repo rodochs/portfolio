@@ -70,12 +70,7 @@
 
             let chart_type = 'line'
 
-            let wid = window.screen.width;
-
-            if (wid < 800)
-                legend_position = 'top'
-            else
-                legend_position = 'right'
+            let bw = 1
 
 
             let ctx = document.getElementsByClassName("chart");
@@ -88,7 +83,7 @@
                       label: "Lula",
                       type: chart_type,
                       borderColor: "#db415a",
-                      borderWidth: "2",
+                      borderWidth: bw,
                       backgroundColor: "rgba(219, 65, 90, 0.1)",
                       data: lula,
                       pointRadius: 0,
@@ -97,7 +92,7 @@
                       label: "Bolsonaro",
                       type: chart_type,
                       borderColor: "#085ce6",
-                      borderWidth: "2",
+                      borderWidth: bw,
                       backgroundColor: "rgba(8, 92, 230, 0.1)",
                       pointRadius: 0,
                       data: bolsonaro,
@@ -106,7 +101,7 @@
                       label: "Ciro Gomes",
                       type: chart_type,
                       borderColor: "#2aab1a",
-                      borderWidth: "2",
+                      borderWidth: bw,
                       backgroundColor: "rgba(42, 171, 26, 0.1)",
                       pointRadius: 0,
                       hidden: "true",
@@ -116,7 +111,7 @@
                       label: "Doria",
                       type: chart_type,
                       borderColor: "#6618ab",
-                      borderWidth: "2",
+                      borderWidth: bw,
                       backgroundColor: "rgba(102, 24, 171, 0.1)",
                       pointRadius: 0,
                       hidden: "true",
@@ -139,7 +134,7 @@
                 },
                 title :{
                     display: true,
-                    text : 'Brazilian Presidential Candidates Twitter Score Per Day (%)',
+                    text : 'Brazilian Presidential Candidates - Daily Twitter Score (%)',
                     fontSize : 20,
                     align: 'center',
                     position: 'top'
@@ -150,7 +145,7 @@
                 },
                 legend: {
                     fullSize: false,
-                    position: legend_position,
+                    position: 'right',
                     align: 'start',
                     display: true,
                 },
