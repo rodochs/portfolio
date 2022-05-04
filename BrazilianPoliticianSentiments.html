@@ -85,42 +85,32 @@
                 datasets: [
                     {
                       label: "Lula",
-                      type: 'line',
-                      borderColor: "#db415a",
-                      borderWidth: "2",
-                      backgroundColor: "rgba(219, 65, 90, 0.1)",
+                      type: chart_type,
+                      stack: "Lula",
+                      backgroundColor: "#db415a",
                       data: lula,
-                      pointRadius: 0,
                     }, 
-                    { 
+                    {
                       label: "Bolsonaro",
-                      type: 'line',
-                      borderColor: "#085ce6",
-                      borderWidth: "2",
-                      backgroundColor: "rgba(8, 92, 230, 0.1)",
-                      pointRadius: 0,
+                      type: chart_type,
+                      stack: "Bolsonaro",
+                      backgroundColor: "#085ce6",      
                       data: bolsonaro,
-                    },
-                    { 
+                    }, 
+                    {
                       label: "Ciro Gomes",
-                      type: 'line',
-                      borderColor: "#2aab1a",
-                      borderWidth: "2",
-                      backgroundColor: "rgba(42, 171, 26, 0.1)",
-                      pointRadius: 0,
-                      hidden: "true",
+                      type: chart_type,
+                      stack: "Ciro",
+                      backgroundColor: "#2aab1a",      
                       data: ciro,
-                    },
-                    { 
+                    }, 
+                    {
                       label: "Doria",
-                      type: 'line',
-                      borderColor: "#6618ab",
-                      borderWidth: "2",
-                      backgroundColor: "rgba(102, 24, 171, 0.1)",
-                      pointRadius: 0,
-                      hidden: "true",
+                      type: chart_type,
+                      stack: "Doria",
+                      backgroundColor: "#6618ab",      
                       data: doria,
-                    },
+                    }, 
                 ]
               },
               options: {
@@ -138,7 +128,7 @@
                 },
                 title :{
                     display: true,
-                    text : 'Brazilian Presidential Candidates Twitter Score Per Day (%)',
+                    text : 'Brazilian Presidential Candidates - Daily Twitter Score (%)',
                     fontSize : 20,
                     align: 'center',
                     position: 'top'
@@ -149,7 +139,7 @@
                 },
                 legend: {
                     fullSize: false,
-                    position: legend_position,
+                    position: 'right',
                     align: 'start',
                     display: true,
                 },
@@ -159,7 +149,7 @@
                         display: true,
                         drawBorder: true,
                     },
-                    stacked: false,
+                    stacked: true,
                     ticks: {
                       suggestedMin: 0,
                       suggestedMax: 100,
@@ -173,10 +163,12 @@
                         labelString: 'Positive Tweets (%)',
                     },
                     ticks: {
-                      suggestedMin: 25,
-                      suggestedMax: 65,
+                      suggestedMin: 0,
+                      suggestedMax: 100,
+                      maxRotation: 0,
+                      minRotation: 0
                     },
-                    stacked: false,
+                    stacked: true,
                     gridLines: {
                         display: true,
                         drawBorder: false,
