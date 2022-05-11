@@ -336,15 +336,16 @@ label {
 }
 
 button {
-  border-radius: 0;
-}
-
-button:focus:not(:focus-visible) {
-  outline: 0;
+  background-color: white;
+  border: none;
+  color: gray;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  align-items: right;
 }
 
 input,
-button,
 select,
 optgroup,
 textarea {
